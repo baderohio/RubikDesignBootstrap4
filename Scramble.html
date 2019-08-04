@@ -1,0 +1,87 @@
+<!--
+/*
+* Programmer : Dr.-Ing. Bader Juma
+* Date       : July 18, 2019
+* File       : Scramble.html
+* Purpose    : Scramble cell of rubic faces
+*/
+-->
+
+  <!DOCTYPE html>
+   <html>
+    <head>
+	 <meta charset="UTF-8">
+     <meta name="description" content="Free Rubik Play">
+     <meta name="keywords" content="HTML,CSS,JavaScript">
+     <meta name="author" content="Bader Juma">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- JQuery-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+	  </script>
+	  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+      <!-- css style for rubik -->
+      <link rel="stylesheet" type="text/css" href="rubicstyle.css">
+	
+    </head>
+
+   <body>
+    <!--Navigation Bar-->
+    <div class="navbar">
+     <a href="Home.html">Home</a>
+     <a href="" class="active">Randomizer</a>
+	 <a href="Help.html">Help</a>
+    </div>
+	<div id="main">
+    <br><br>
+     <h1>Scramble Rubik Cube</h1>
+	 <p>To more understand, how to use this page, you can see the <a href="Help.html">Help</a>.</p>
+     
+     
+	   
+	 <div class ="rub">
+	 <p>Enter matrix dimension that is positive integer:</p>
+	 <ul>
+	 <!--Enter data--><!-- -->
+	 <li><input type="text" placeholder="Enter(1-10)" required id="numb"></li>
+	 <li><button  type="button" onclick="dataVaidateFunction()" class="red">Enter</button></li>	
+	 <li><button type="button" onclick="initializeFunction()" id="btnReset">Reset</button></li>
+	 </ul>
+	 <div>
+     <div class ="rub" style="clear:both;">    
+	 <p id="pScramble">Push button to scramble faces</p>
+	 <ul>
+	 <li><input type="text" placeholder="Integer(1-9000)" required id="numScramble"></li>
+	 <li><button  type="button" onclick="scrambleFunction()" id="btnScramble">scramble</button></li>
+	 </ul>
+	 </div>
+	  <!--test code-->
+	
+	<!-- Create rubic orthographic -->
+    <div class="grid-container">
+     <div class="grid-item"></div>
+     <div class="grid-item"></div>  
+     <div class="grid-item"><table id="top"></table></div>    
+     <div class="grid-item"></div>
+     <div class="grid-item"><table id="back"></table></div>
+     <div class="grid-item"><table id="rightside"></table></div>  
+     <div class="grid-item"><table id="front"></table></div>
+     <div class="grid-item"><table id="leftside"></table></div>
+     <div class="grid-item"></div>  
+     <div class="grid-item"></div> 
+     <div class="grid-item"><table id="bottom"></table></div>  
+     <div class="grid-item"></div> 
+    </div>
+    
+    <!--table display the sequence of random movement for rubik cube-->
+	<table id="randData"></table>	 
+    
+   
+   <br><br>
+   </div>
+   <div id="footer">Copyright &copy; 2019 Dr.-Ing. Bader Juma</div>
+<!--Call javaScript code for create rubic orthographic -->
+<script src="mainFunctionScript.js"></script>
+<script src="branchFunctionScript.js"></script>
+
+</body>
+</html>
