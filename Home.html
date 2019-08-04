@@ -1,0 +1,113 @@
+<!--
+/*
+* Programmer : Dr.-Ing. Bader Juma
+* Date       : July 18, 2019
+* File       : Home.html
+* Purpose    : GUI of Rubik Desing
+*/
+-->
+
+  <!DOCTYPE html>
+   <html>
+   
+    <head>
+     <meta charset="UTF-8">
+     <meta name="description" content="Free Rubik Play">
+     <meta name="keywords" content="HTML,CSS,JavaScript">
+     <meta name="author" content="Bader Juma">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- JQuery-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+	  </script>
+	  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+      <!-- css style for rubik -->
+      <link rel="stylesheet" type="text/css" href="rubicstyle.css">
+    </head>
+
+   <body>
+    <!--Navigation Bar-->
+    <div class="navbar">
+     <a href="" class="active">Home</a>
+     <a href="Scramble.html">Randomizer</a>
+	 <a href="Help.html">Help</a>
+    </div>
+   <div id="main">
+     <br><br>
+     <h1>Rubik's Cube Orthographic</h1>
+	 <p>To more understand, how to use this page, you can see the <a href="Help.html">Help</a>.</p>
+	 <p>Enter matrix dimension that is positive integer:</p>
+	 
+	 <div class ="rub">
+	 <ul>
+	 <!--Enter data--><!-- -->
+	 <li><input type="text" placeholder="Enter(1-10)" required id="numb"></li>
+	 <li><button type="button" onclick="dataVaidateFunction()" >Enter</button></li>
+	 <li><button type="button" onclick="rotationFunction()" id="btnRotate">Rotate</button></li>
+	 <li><button  type="button" onclick="scrambleFunction()" id="btnScramble">Scramble</button></li>
+	 <li><button type="button" onclick="initializeFunction()" id="btnReset">Reset</button></li>
+	 </ul>
+     </div>
+	  <br><br>
+	 
+	 <div class="choosingVariable" style="clear:both;">
+	  <hr>
+        <div class="variables"> 
+		  <p>Choose axis rotation</p>
+          <select id="axisRotation">
+           <option value="x">X</option>
+           <option value="y">Y</option>	
+           <option value="z">Z</option>	
+          </select>
+		</div>
+				
+		 <!-- two direction of rotation Clockwise and Anticlockwise-->
+		<div class="variables">
+         <p>Choose direction of rotation</p>
+	      <select id="typeRotation">
+           <option value="cw">CW</option>
+           <option value="anticw">AntiCW</option>
+          </select>
+		</div>
+		     
+        <!--3 maximum step rotation around one axis that make any 
+        cell reach the required faces -->
+		<div class="variables">
+         <p>Choose step of rotation</p>
+         <select id="stepRotation">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+         </select>
+		</div>
+		
+		<div class="variables">
+		 <p>Choose position of cell to be rotate</p>
+		 <select id="cellRotation"></select>
+        </div>
+		</div>
+	 
+	<!-- Create rubic orthographic -->
+    <div class="grid-container" style="clear:both;">
+	 
+     <div class="grid-item"></div>
+     <div class="grid-item"></div>  
+     <div class="grid-item"><table id="top"></table></div>    
+     <div class="grid-item"></div>
+     <div class="grid-item"><table id="back"></table></div>
+     <div class="grid-item"><table id="rightside"></table></div>  
+     <div class="grid-item"><table id="front"></table></div>
+     <div class="grid-item"><table id="leftside"></table></div>
+     <div class="grid-item"></div>  
+     <div class="grid-item"></div> 
+     <div class="grid-item"><table id="bottom"></table></div>  
+     <div class="grid-item"></div> 
+    </div>
+
+   </div>
+   <div id="footer">Copyright &copy; 2019 Dr.-Ing. Bader Juma</div>
+<!--Call javaScript code for create rubic orthographic -->
+<script src="mainFunctionScript.js"></script>
+<script src="branchFunctionScript.js"></script>
+
+</body>
+</html>
