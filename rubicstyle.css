@@ -1,229 +1,63 @@
 /*
 * Programmer : Dr.-Ing. Bader Juma
-* Date       : July 18, 2019
+* Date       : August 07, 2019
 * File       : rubicstyle.css
 * Purpose    : external file that contain style
 */
 
-  /*html {background-color: #23B9B7;}*/
  
-  body {width: 100%; 
-        margin: auto;
-		background-color: #BBBDB4;}
-		
- #main {margin: 1em;}
-  h1 {
-       color: #046e6c;
-       font-family: verdana;
-       font-size: 200%;}
-  p  {
-       color: black;
-	   font-family: 'Open Sans', sans-serif;
-       font-size: 120%;
-	   }	
-  a  {
+  .bgColor, body{
+   background-color: #BBBDB4;
+  }
+
+     a  {
 	  color: #046e6c;
      }
+	 
+  .active {
+	  background-color: #23B9B7;
+  }
+  
+  .rubikStyle {
+	  color: #046e6c;
+  }
+  
+  .buttonStyle {
+	  background-color: #23B9B7;
+	  color: #ffffff;
+               }
+   .buttonStyle:hover {
+	  /*background-color: #3e8e41*/
+	  background-color: #065453;
+	                  }
+	  
+  .buttonStyle:active{
+	  /*background-color: #3e8e41*/
+	  background-color: #052b2b;
+	  }
+	  
+	  
   
 
-  /*body, .rub {width: 95%; margin: auto;}*/
-  .rub ul { 
-        list-style-type: none;
-		/*float: left;*/
-		}
-  .rub li {
-		float: left;
-		
-		}
-  /*.choosingVariable {
-	  float: none;
-  }*/
-   .variables {
-	float:left;
-	margin-left: 20px;  
-    margin-bottom: 20px;	
-   }	
+
   
   .grid-container {
-   clear: both;
+   /* clear: both; */
    display: grid;
-   background-color: #89905B;
+  background-color: #89905B; 
    
    grid-template-columns: auto auto auto auto;
+  
    
                 }
-	.grid-item {margin: 1em; }
+	.grid-item {margin: .5em; }
    
-    /*table, td {border: 1px solid #ffffff;}*/
-	table, td {border-style: none;}
-    /*td {padding: 20px;}*/	
+    table, td {border: 1px solid #fdcb6e;}
+	
 	td {padding: 1em;}	
 	
-	/********************************/
-	#randData {
-    /*display: block;*/
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-     }
-
-    #randData td, #randData th {
-    border: 1px solid #ddd;
-    padding: 8px auto 8px auto;
-	text-align: center;
-    }
-    #randData tr:nth-child(even){background-color: #f2f2f2;}
-    #randData tr:hover {background-color: #ddd;}
-    #randData th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    /*text-align: left;*/
-    /*background-color: #4CAF50;*/
-	background-color: #23B9B7;
-    color: white;
-    }
-	/********************************/
-	/***********************************************/
-	/*button*/
-	button {
-  display: inline-block;
-  /*padding: 10px 20px;*/
-  padding: 10px 30px;
-  margin: 1em;
-  width: 10em;
-  font-size: 1em;
-  
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #333333;
-
-  border: none;
-  border-radius: 15px;
-  /*box-shadow: 0 9px #999;*/ 
-  }
-   button:hover {
-	  /*background-color: #3e8e41*/
-	  background-color: #555555;
-	  }
-  button:active {
-  /*background-color: #3e8e41;*/
-  background-color: #555555;
-  transform: translateY(4px);}
-  /**************************************************/
-   /*input*/
-  select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;}
-
-  input {
-/*   width: 11%; */
-  width: 50%;
-  /*background-color: #4CAF50;*/
-  background-color: #EEEEEE;
-  color: black;
-  padding: 14px 20px;
-  margin: 8px 10px;
-  margin-top: 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: .7em;}
-  
-
-/*********************************************************/
-/*navigation bar style*/
-
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
- 
-  /*bottom: 0;*/
-  top: 0;
-  /*width: 95%;*/
-  width: 100%;
-}
-
-.navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.navbar a:hover {
-  background: #f1f1f1;
-  color: black;
-}
-
-.navbar a.active {
-  /*background-color: #4CAF50;*/ 
-  background-color: #23B9B7;
-  color: white;
-}
-/*
-.main {
-  padding: 16px;
-  margin-bottom: 30px;
-}
-*/
-/*********************************************************/
-/*  .col1 {float: left; width: 40%;  text-align: justify; font-weight: bold;} */
- .col1 {float: left; width: 40%;  text-align: justify;}
-/*  .col2 {float: right;} */
- img {width: 50%; }
-  hr {clear: both;}
-	
- #footer{
-	 front-size: 70%; 
-	 text-align: center; 
-	 font-style: italic; 
-	 padding 10px; 
-	 color: white;
-	 background-color: #333;
-	 /*background-color:#eeeef0; */
-	 clear: both;
-	 position: fixed;
-	 bottom: 0px;
-	 /*width: 95%;*/
-	 width: 100%;
-	 margin: auto;
-	 }
-	 
-	
-	 
-	 	   /***********************************/
 	  @media screen and (max-width: 500px) {
 		  td {padding: .25em;}
 		  .grid-item {margin: 0.1em;}
 		   #footer{position: static;}
 		   }
-	   
-	   @media screen and (max-width: 320px) {
-	     h1 { font-size: 20px;}		   
-         p { font-size: 12px;}
-         #typeRotation { font-size: 10px; }
-         #main {margin: 0;}
-		#randData {display: block;}
-		td {padding: .25em;}
-		#randData td, #randData th {
-						font-size: 10px;}
-	   .variables { clear: both; }
-	    #footer{position: static;}
-		 .col1 {float: left; width: 100%;}
-          img {width: 90%;}
-		 }
-	   /***********************************/
-
- 

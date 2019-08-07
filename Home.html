@@ -1,93 +1,166 @@
 <!--
 /*
 * Programmer : Dr.-Ing. Bader Juma
-* Date       : July 18, 2019
+* Date       : August 7, 2019
 * File       : Home.html
 * Purpose    : GUI of Rubik Desing
 */
 -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="Free Rubik Play">
+    <meta name="keywords" content="HTML,CSS,JavaScript, Bootstrap4">
+    <meta name="author" content="Bader Juma">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!DOCTYPE html>
-   <html>
-   
-    <head>
-     <meta charset="UTF-8">
-     <meta name="description" content="Free Rubik Play">
-     <meta name="keywords" content="HTML,CSS,JavaScript">
-     <meta name="author" content="Bader Juma">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <!-- JQuery-->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
 	  </script>
-	  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+   	  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
       <!-- css style for rubik -->
       <link rel="stylesheet" type="text/css" href="rubicstyle.css">
-    </head>
-
-   <body>
+  </head>
+  <body>
     <!--Navigation Bar-->
-    <div class="navbar">
-     <a href="" class="active">Home</a>
-     <a href="Scramble.html">Randomizer</a>
-	 <a href="Help.html">Help</a>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">&#9638;</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Scramble.html">Randomizer</a>
+      </li>
+	   <li class="nav-item">
+        <a class="nav-link" href="Help.html">Help</a>
+      </li>
+     
+    </ul>
+  
+  </div>
+</nav>
+<div class="jumbotron jumbotron-fluid bgColor">
+  <div class="container">
+    <h1 class="display-4 rubikStyle">Rubik's Cube Orthographic</h1>
+    <p class="lead">To more understand, how to use this page, you can see the <a href="Help.html">Help</a>.<br>
+	Enter matrix dimension that is positive integer:</p>
+	  <div class="row">
+    <div class="col-6 col-md-4">
+      	<div class="input-group mb-3">
+          <!--Enter data--><!-- -->
+  <input type="text" class="form-control" placeholder="Enter(1-10)" aria-label="Recipient's username" aria-describedby="basic-addon2" id="numb">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary buttonStyle" type="button" onclick="dataVaidateFunction()">Enter</button>
+  </div>
+</div>
     </div>
-   <div id="main">
-     <br><br>
-     <h1>Rubik's Cube Orthographic</h1>
-	 <p>To more understand, how to use this page, you can see the <a href="Help.html">Help</a>.</p>
-	 <p>Enter matrix dimension that is positive integer:</p>
-	 
-	 <div class ="rub">
-	 <ul>
-	 <!--Enter data--><!-- -->
-	 <li><input type="text" placeholder="Enter(1-10)" required id="numb"></li>
-	 <li><button type="button" onclick="dataVaidateFunction()" >Enter</button></li>
-	 <li><button type="button" onclick="rotationFunction()" id="btnRotate">Rotate</button></li>
-	 <li><button  type="button" onclick="scrambleFunction()" id="btnScramble">Scramble</button></li>
-	 <li><button type="button" onclick="initializeFunction()" id="btnReset">Reset</button></li>
-	 </ul>
-     </div>
-	  <br><br>
-	 
-	 <div class="choosingVariable" style="clear:both;">
-	  <hr>
-        <div class="variables"> 
-		  <p>Choose axis rotation</p>
-          <select id="axisRotation">
-           <option value="x">X</option>
-           <option value="y">Y</option>	
-           <option value="z">Z</option>	
-          </select>
-		</div>
-				
-		 <!-- two direction of rotation Clockwise and Anticlockwise-->
-		<div class="variables">
-         <p>Choose direction of rotation</p>
-	      <select id="typeRotation">
-           <option value="cw">CW</option>
-           <option value="anticw">AntiCW</option>
-          </select>
-		</div>
-		     
-        <!--3 maximum step rotation around one axis that make any 
+    <div class="col-10 col-md-8">
+	
+	<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-outline-secondary buttonStyle" onclick="rotationFunction()" id="btnRotate">Rotate</button>
+  <button type="button" class="btn btn-outline-secondary buttonStyle" onclick="scrambleFunction()" id="btnScramble">Scramble</button>
+  <button type="button" class="btn btn-outline-secondary buttonStyle" onclick="initializeFunction()" id="btnReset">Reset</button>
+</div>
+    </div>
+  </div>
+  <!--  -->
+    <div class="row">
+    <div class="col-12 col-lg-3">
+     <div class="card mb-3 bgColor" style="max-width: 18rem;">
+  <div class="card-header">Rotation axis</div>
+  <div class="card-body">
+    <h5 class="card-title">Choose variable</h5>
+    <p class="card-text">Choose one of the variables x, y, z that represents axis of rotation.</p>
+	<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+  </div>
+  <select class="custom-select" id="axisRotation">
+  <!--   <option selected>Choose...</option> -->
+     <option value="x">X</option>
+     <option value="y">Y</option>	
+     <option value="z">Z</option>	
+
+  </select>
+</div>
+  </div>
+</div>
+    </div>
+	    <div class="col-12 col-lg-3">
+     <div class="card bgColor mb-3" style="max-width: 18rem;">
+  <div class="card-header">Rotation &#8635; or &#8634; direction</div>
+  <div class="card-body">
+    <h5 class="card-title">Choose variable</h5>
+    <p class="card-text">Choose cw for clockwise or anticw for anticlockwise rotation.</p>
+	<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+  </div>
+   <!-- two direction of rotation Clockwise and Anticlockwise-->
+  <select class="custom-select" id="typeRotation">
+   <option value="cw">CW</option>
+   <option value="anticw">AntiCW</option>    
+  </select>
+</div>
+  </div>
+</div>
+    </div>
+	    <div class="col-12 col-lg-3">
+     <div class="card bgColor mb-3" style="max-width: 18rem;">
+  <div class="card-header">Rotation step</div>
+  <div class="card-body">
+    <h5 class="card-title">Choose variable</h5>
+    <p class="card-text">choose 1, 2, 3 that represent the required number to make rotaion.</p>
+	<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+  </div>
+  <!--3 maximum step rotation around one axis that make any 
         cell reach the required faces -->
-		<div class="variables">
-         <p>Choose step of rotation</p>
-         <select id="stepRotation">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-         </select>
-		</div>
-		
-		<div class="variables">
-		 <p>Choose position of cell to be rotate</p>
-		 <select id="cellRotation"></select>
-        </div>
-		</div>
-	 
-	<!-- Create rubic orthographic -->
-    <div class="grid-container" style="clear:both;">
+  <select class="custom-select" id="stepRotation">
+   
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+
+  </select>
+</div>
+  </div>
+</div>
+    </div>
+	    <div class="col-12 col-lg-3">
+     <div class="card bgColor mb-3" style="max-width: 18rem;">
+  <div class="card-header">Rotation cell</div>
+  <div class="card-body">
+    <h5 class="card-title">Choose variable</h5>
+    <p class="card-text">The number here from 1 to n where n represent dimension of cube.</p>
+	<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+  </div>
+  <select class="custom-select" id="cellRotation">
+  
+  </select>
+</div>
+  </div>
+</div>
+    </div>
+ 
+	
+  </div>
+  <!--  -->
+  	<!-- Create rubic orthographic -->
+    <div class="grid-container" >
 	 
      <div class="grid-item"></div>
      <div class="grid-item"></div>  
@@ -104,10 +177,21 @@
     </div>
 
    </div>
-   <div id="footer">Copyright &copy; 2019 Dr.-Ing. Bader Juma</div>
-<!--Call javaScript code for create rubic orthographic -->
+  <!--  -->
+ 
+  
+  </div>
+  </div>
+  
+  <!--Call javaScript code for create rubic orthographic -->
 <script src="mainFunctionScript.js"></script>
 <script src="branchFunctionScript.js"></script>
 
-</body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
 </html>
