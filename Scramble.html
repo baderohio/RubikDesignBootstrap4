@@ -7,57 +7,101 @@
 */
 -->
 
-  <!DOCTYPE html>
-   <html>
-    <head>
-	 <meta charset="UTF-8">
-     <meta name="description" content="Free Rubik Play">
-     <meta name="keywords" content="HTML,CSS,JavaScript">
-     <meta name="author" content="Bader Juma">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+/*
+* Programmer : Dr.-Ing. Bader Juma
+* Date       : August 8, 2019
+* File       : Scramble.html
+* Purpose    : Scramble cell of rubic faces
+*/
+-->
+   
+   <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="Free Rubik Play">
+    <meta name="keywords" content="HTML,CSS,JavaScript, Bootstrap4">
+    <meta name="author" content="Bader Juma">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <!-- JQuery-->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
 	  </script>
-	  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+   	  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
       <!-- css style for rubik -->
       <link rel="stylesheet" type="text/css" href="rubicstyle.css">
-	
-    </head>
+  </head>
+  <body>
 
-   <body>
     <!--Navigation Bar-->
-    <div class="navbar">
-     <a href="Home.html">Home</a>
-     <a href="" class="active">Randomizer</a>
-	 <a href="Help.html">Help</a>
-    </div>
-	<div id="main">
-    <br><br>
-     <h1>Scramble Rubik Cube</h1>
-	 <p>To more understand, how to use this page, you can see the <a href="Help.html">Help</a>.</p>
-     
-     
-	   
-	 <div class ="rub">
-	 <p>Enter matrix dimension that is positive integer:</p>
-	 <ul>
-	 <!--Enter data--><!-- -->
-	 <li><input type="text" placeholder="Enter(1-10)" required id="numb"></li>
-	 <li><button  type="button" onclick="dataVaidateFunction()" class="red">Enter</button></li>	
-	 <li><button type="button" onclick="initializeFunction()" id="btnReset">Reset</button></li>
-	 </ul>
-	 <div>
-     <div class ="rub" style="clear:both;">    
-	 <p id="pScramble">Push button to scramble faces</p>
-	 <ul>
-	 <li><input type="text" placeholder="Integer(1-9000)" required id="numScramble"></li>
-	 <li><button  type="button" onclick="scrambleFunction()" id="btnScramble">scramble</button></li>
-	 </ul>
-	 </div>
-	  <!--test code-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">&#9638;</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="Home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link activeItem" href="#">Randomizer</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="Help.html">Help</a>
+          </li>
+         
+        </ul>
+      
+      </div>
+    </nav>
+    
+<div class="jumbotron jumbotron-fluid bgColor">
+  <div class="container">
+    <h1 class="display-4 rubikStyle">Scramble Rubik Cube</h1>
+    <p class="lead">To more understand, how to use this page, you can see the <a href="Help.html">Help</a>.</p>   
+	  
+  <div class="row">
+    <div class="col-12 col-md-6">
 	
-	<!-- Create rubic orthographic -->
-    <div class="grid-container">
+	<p class="lead">Enter matrix dimension that is positive integer:</p>
+   	<!--  -->
+	<div class="input-group">
+  <input type="text" class="form-control" placeholder="Enter(1-10)" aria-label="Recipient's username" aria-describedby="basic-addon2" id="numb">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary buttonStyle" type="button" onclick="dataVaidateFunction()">Enter</button>
+    <button class="btn btn-outline-secondary buttonStyle" type="button" onclick="initializeFunction()" id="btnReset">Reset</button>
+  </div>
+</div>
+	<!--  -->
+    </div>
+    <div class="col-12 col-md-6">
+	<p class="lead" id="pScramble">Push button to scramble faces, enter positive integer:</p>
+	<div class="input-group mb-3">
+	
+  <input type="text" class="form-control" placeholder="Integer(1-9000)" aria-label="Recipient's username" aria-describedby="basic-addon2" id="numScramble">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary buttonStyle" type="button" onclick="scrambleFunction()" id="btnScramble">Scramble</button>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+<hr>
+	
+
+  
+ 
+  <!--  -->
+  	<!-- Create rubic orthographic -->
+    <div class="grid-container" >
+	 
      <div class="grid-item"></div>
      <div class="grid-item"></div>  
      <div class="grid-item"><table id="top"></table></div>    
@@ -71,17 +115,30 @@
      <div class="grid-item"><table id="bottom"></table></div>  
      <div class="grid-item"></div> 
     </div>
+  <hr>
+  <!--  -->
+     <!--table display the sequence of random movement for rubik cube-->
+	<table id="randData"></table>
+   </div>
+ 
+  
+  </div>
+  
     
-    <!--table display the sequence of random movement for rubik cube-->
-	<table id="randData"></table>	 
+    
+	 
     
    
-   <br><br>
-   </div>
-   <div id="footer">Copyright &copy; 2019 Dr.-Ing. Bader Juma</div>
-<!--Call javaScript code for create rubic orthographic -->
+  
+   
+   <!--Call javaScript code for create rubic orthographic -->
 <script src="mainFunctionScript.js"></script>
 <script src="branchFunctionScript.js"></script>
 
-</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
 </html>

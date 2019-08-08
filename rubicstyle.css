@@ -14,7 +14,7 @@
 	  color: #046e6c;
      }
 	 
-  .active {
+  .activeItem {
 	  background-color: #23B9B7;
   }
   
@@ -56,8 +56,35 @@
 	
 	td {padding: 1em;}	
 	
+		/********************************/
+	#randData {
+    /*display: block;*/
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+     }
+
+    #randData td, #randData th {
+    border: 1px solid #ddd;
+    padding: 8px auto 8px auto;
+	text-align: center;
+    }
+    #randData tr:nth-child(even){background-color: #f2f2f2;}
+    #randData tr:hover {background-color: #ddd;}
+    #randData th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    /*text-align: left;*/
+    /*background-color: #4CAF50;*/
+	background-color: #23B9B7;
+    color: white;
+    }
+	/********************************/
+	
 	  @media screen and (max-width: 500px) {
+		 #randData td, #randData th {
+						font-size: 10px;}
 		  td {padding: .25em;}
 		  .grid-item {margin: 0.1em;}
-		   #footer{position: static;}
+		  
 		   }
