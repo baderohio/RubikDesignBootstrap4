@@ -1,96 +1,101 @@
 <!--
 /*
 * Programmer : Dr.-Ing. Bader Juma
-* Date       : July 18, 2019
+* Date       : August 9, 2019
 * File       : Help.html
 * Purpose    : Explain the purpose of button on the web page
 */
 -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="Free Rubik Play">
+    <meta name="keywords" content="HTML,CSS,JavaScript, Bootstrap4">
+    <meta name="author" content="Bader Juma">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!DOCTYPE html>
-   <html>
-    <head>
-	 <meta charset="UTF-8">
-     <meta name="description" content="Free Rubik Play">
-     <meta name="keywords" content="HTML,CSS,JavaScript">
-     <meta name="author" content="Bader Juma">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <!-- JQuery-->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
 	  </script>
-	  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+   	  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
       <!-- css style for rubik -->
       <link rel="stylesheet" type="text/css" href="rubicstyle.css">
-	
-    </head>
-
-   <body style="background-color: #BBBDA0;">
+  </head>
+  <body>
     <!--Navigation Bar-->
-    <div class="navbar">
-     <a href="Home.html">Home</a>
-     <a href="Scramble.html">Randomizer</a>
-	 <a href="" class="active">Help</a>
-    </div>
-	<div id="main">
-     <br><br>
-     <h1>How to use the web page Home?</h1>
-	 
-	 <div class="col1">
-	 <p>Figure below represents the start page when the web Home page loaded.</p>
-	 </div>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">&#9638;</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-	 <hr>
-	 
-	 <div class="col1">
-	 <p>Enter integer positive value between 1 to &infin; such as: 1,2,3,...,&infin;. 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link " href="Home.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Scramble.html">Randomizer</a>
+      </li>
+	   <li class="nav-item">
+        <a class="nav-link activeItem" href="#">Help</a>
+      </li>
+     
+    </ul>
+  
+  </div>
+</nav>
+<div class="jumbotron jumbotron-fluid bgColor">
+  <div class="container">
+    <h1 class="display-4 rubikStyle">How to use the web page Home?</h1> 
+	<br><br>
+	 <p class="lead">
+	 Enter integer positive value between 1 to &infin; such as: 1,2,3,...,&infin;. 
 	 The positive number you enter represents the size of rubik's cube.</p>
-	 </div>
-	
+	 <hr> 
+	 <p class="lead">
+	 After that press enter button, it will show you orthographic's graph for rubik's cube depending on the dimension you enter. 
+	 In addition, another two new buttons will show on the page.</p>	
 	 <hr>
-	 
-	 <div class="col1">
-	 <p>After that press enter button, it will show you orthographic's graph for rubik's cube depending on the dimension you enter. 
-	 In addition, another two new buttons will show on the page.</p>
-	 </div>
-	
-	 <hr>
-	 
-	 <div class="col1">
-	 <p>If you press rotate or scramble button, a new reset button will show on the page.
+	 <p class="lead">
+	 If you press rotate or scramble button, a new reset button will show on the page.
 	 To start the game, press scramble button. It will show you orthographic scramble graph.</p>
-	 </div>
 	
 	 <hr>
-	 
-	 <div class="col1">
-	 <p>Below button, we have four variables to choose to start the game. Let first press reset button.</p>
-	 </div>
-	
-	 <hr>
-	 
-	 <div class="col1">
-	 <p>After we choose these variables or not it has a default value. Press rotate button.</p>
-	 </div>
-	
-	 <hr>
-	 
-	 <div class="col1">
-	 <p>For choose axis rotation. There are X, Y, and Z.</p>
-	 <p>For choose direction of rotation. There are clock wise and anti clock wise.</p>
-	 <p>For choose step of rotation. There are 1, 2, and 3.</p>
-	 <p>For choose position of cell to be rotate. There are 1,2,...,n where n represents size of rubik's cube that enter in first step.</p>
-	 <p>Press reset button will initialize the color of faces to the default color before start the game. 
-	 Also, these color faces represent the target of gamer that need to change the cell location of rubik's cube. </p>
-	 </div>
-	
-	 <hr>
-	 
-	 </div>
-	
-  <div id="footer">Copyright &copy; 2019 Dr.-Ing. Bader Juma</div>
-  <!--Call javaScript code for create rubic orthographic -->
-  <script src="mainFunctionScript.js"></script>
-  <script src="branchFunctionScript.js"></script>
+	 <p class="lead">
+	 Below button, we have four variables to choose to start the game. Let first press reset button.</p>
 
+	 <hr>
+	 <p class="lead">
+	 After we choose these variables or not it has a default value. Press rotate button.</p>
+
+	 <hr>
+	 
+	 <p class="lead">
+	 For choose axis rotation. There are X, Y, and Z.</p>
+	 <p class="lead">For choose direction of rotation. There are clock wise and anti clock wise.</p>
+	 <p class="lead">For choose step of rotation. There are 1, 2, and 3.</p>
+	 <p class="lead">For choose position of cell to be rotate. There are 1,2,...,n where n represents size of rubik's cube that enter in first step.</p>
+	 <p class="lead">Press reset button will initialize the color of faces to the default color before start the game. 
+	 Also, these color faces represent the target of gamer that need to change the cell location of rubik's cube. </p>
+
+   </div>
+  </div>
+  
+  
+  <!--Call javaScript code for create rubic orthographic -->
+<script src="mainFunctionScript.js"></script>
+<script src="branchFunctionScript.js"></script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
-  </html>
+</html>
